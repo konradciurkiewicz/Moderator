@@ -15,8 +15,10 @@ and open the template in the editor.
         
         use Moderator\lib\File;
         
-        $file = new File;
-        
+        $file = new File('http://oleszyce.pl.zetorzeszow.eu/?c=mdGal-cmMiniaturka-0-378-800-600.jpg');
+        $file->exist();
+        $file->available();
+        var_dump(is_dir('http://localhost/Teatr/'));
         ?>
     </body>
 </html>
