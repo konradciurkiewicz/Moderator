@@ -3,12 +3,13 @@
     
     use Moderator\lib\File;
         
-    // $file = new File('http://oleszyce.pl.zetorzeszow.eu/?c=mdGal-cmMiniaturka-0-378-800-600.jpg');
-    // $file->exist();
-    // $file->available();
-    // echo $file->contentType;
-//    echo $file->getSourceType();
-         //check, if a valid url is provided
+        use Moderator\lib\File;
+        
+        $file = new File;
+        
+        ?>
+    </body>
+</html>
 
          if (isDomainAvailible('http://www.css-tricks.com'))
             {
