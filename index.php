@@ -1,47 +1,37 @@
 <?php
     require_once 'vendor/autoload.php';
     
-    use Moderator\lib\File;
+    use Moderator\lib\GoogleScraper;
         
-        use Moderator\lib\File;
-        
-        $file = new File;
-        
-        ?>
-    </body>
-</html>
+//
+//$file = 'https://www.google.com/search?as_q=opinie&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&as_filetype=&as_rights=';
+//$doc = new DOMDocument();
+//@ $doc->loadHTMLFile($file);
+//
+//$xpath = new DOMXpath($doc);
+//
+//
+//// example 2: for node data in a selected id
+////$elements = $xpath->query("/html/body/div[@id='yourTagIdHere']");
+//
+//// example 3: same as above with wildcard
+////$elements = $xpath->query("//h3[@class='r']");
+//$elements = $xpath->query('//h3[@class="r"]//a');
+//
+////$elements = $xpath->query("//h3[@class='r']");
+////$elements = $xpath->query("//h3[@class='r']/a");
+//
+//if (!is_null($elements)) {
+//  foreach ($elements as $element) {
+//       var_dump($element);
+//       
+//  }
+//}
 
-         if (isDomainAvailible('http://www.css-tricks.com'))
-            {
-                    echo "Up and running!";
-            }
-            else
-            {
-                    echo "Woops, nothing found there.";
-            }
-     
-            //returns true, if domain is availible, false if not
-            function isDomainAvailible($domain)
-            {
-                    //check, if a valid url is provided
-                    if(!filter_var($domain, FILTER_VALIDATE_URL))
-                    {
-                            return false;
-                    }
-     
-                    //initialize curl
-                    $curlInit = curl_init($domain);
-                    curl_setopt($curlInit,CURLOPT_CONNECTTIMEOUT,10);
-                    curl_setopt($curlInit,CURLOPT_HEADER,true);
-                    curl_setopt($curlInit,CURLOPT_NOBODY,true);
-                    curl_setopt($curlInit,CURLOPT_RETURNTRANSFER,true);
-     
-                    //get answer
-                    $response = curl_exec($curlInit);
-     
-                    curl_close($curlInit);
-     
-                    if ($response) return true;
-                
-            }
-                   
+//ktoś wkleja link, słowo, nazwe produktu itd, czas 
+// lang
+ini_set ( 'max_execution_time', 0);
+$obj=new GoogleScraper();
+// Pass your keyword and proxy ip here.
+$arr=$obj->getUrlList(urlencode('opinie'),'');
+print_r($arr);

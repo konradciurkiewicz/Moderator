@@ -8,7 +8,6 @@ class File {
     public $domain;
     public $file;
     public $headers;
-    public $headers;
     public $contentType; 
 
     public function __construct($file) {
