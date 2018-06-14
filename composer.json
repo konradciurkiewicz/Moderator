@@ -3,6 +3,10 @@
         "psr-4": {"Moderator\\": "app/Moderator"}
     },
     "require-dev": {
-        "phpunit/phpunit": "7"
+        "phpunit/phpunit": "7",
+        "serps/core": "*",
+        "serps/search-engine-google": "*",
+        "serps/http-client-curl": "*",
+        "guzzlehttp/psr7": "*"
     }
 }

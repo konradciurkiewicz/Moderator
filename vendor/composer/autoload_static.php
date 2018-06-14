@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitbb329c85fc9f9a14ceabbbd5c104e458
 {
     public static $files = array (
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     );
 
@@ -19,9 +20,24 @@ class ComposerStaticInitbb329c85fc9f9a14ceabbbd5c104e458
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'S' => 
+        array (
+            'Symfony\\Component\\CssSelector\\' => 30,
+            'Serps\\SearchEngine\\Google\\' => 26,
+            'Serps\\HttpClient\\' => 17,
+            'Serps\\' => 6,
+        ),
+        'P' => 
+        array (
+            'Psr\\Http\\Message\\' => 17,
+        ),
         'M' => 
         array (
             'Moderator\\' => 10,
+        ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Psr7\\' => 16,
         ),
         'D' => 
         array (
@@ -41,9 +57,33 @@ class ComposerStaticInitbb329c85fc9f9a14ceabbbd5c104e458
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Symfony\\Component\\CssSelector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/css-selector',
+        ),
+        'Serps\\SearchEngine\\Google\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/serps/search-engine-google/src',
+        ),
+        'Serps\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/serps/http-client-curl/src',
+        ),
+        'Serps\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/serps/core/src',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
         'Moderator\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/Moderator',
+        ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

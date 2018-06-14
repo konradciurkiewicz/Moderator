@@ -1,37 +1,27 @@
 <?php
     require_once 'vendor/autoload.php';
-    
-    use Moderator\lib\GoogleScraper;
-        
-//
-//$file = 'https://www.google.com/search?as_q=opinie&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&as_filetype=&as_rights=';
-//$doc = new DOMDocument();
-//@ $doc->loadHTMLFile($file);
-//
-//$xpath = new DOMXpath($doc);
-//
-//
-//// example 2: for node data in a selected id
-////$elements = $xpath->query("/html/body/div[@id='yourTagIdHere']");
-//
-//// example 3: same as above with wildcard
-////$elements = $xpath->query("//h3[@class='r']");
-//$elements = $xpath->query('//h3[@class="r"]//a');
-//
-////$elements = $xpath->query("//h3[@class='r']");
-////$elements = $xpath->query("//h3[@class='r']/a");
-//
-//if (!is_null($elements)) {
-//  foreach ($elements as $element) {
-//       var_dump($element);
-//       
-//  }
-//}
 
-//ktoś wkleja link, słowo, nazwe produktu itd, czas 
-// lang
-ini_set ( 'max_execution_time', 0);
-$obj=new GoogleScraper();
-// Pass your keyword and proxy ip here.
-$arr=$obj->getUrlList(urlencode('opinie'),'');
-print_r($arr);
+use Serps\SearchEngine\Google\GoogleClient;
+use Serps\HttpClient\CurlClient;
+use Serps\SearchEngine\Google\GoogleUrl;
+use Serps\Core\Browser\Browser;
+
+$userAgent = "Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36";
+$browserLanguage = "fr-FR";
+
+$browser = new Browser(new CurlClient(), $userAgent, $browserLanguage);
+//https://serp-spider.github.io/documentation/search-engine/google/parse-page/
+// Create a google client using the browser we configured
+$googleClient = new GoogleClient($browser);
+
+// Create the url that will be parsed
+$googleUrl = new GoogleUrl();
+$googleUrl->setSearchTerm('opinie');
+
+$response = $googleClient->query($googleUrl);
+
+$results = $response->getNaturalResults();
+
+foreach($results as $result){
+    var_dump($result->getData());
+}
